@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Korona RP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     /* CSS for larger screens */
+     @media only screen and (min-width: 768px) {
+      /* Add styles for larger screens here */
+    }
+
+    /* CSS for smaller screens */
+    @media only screen and (max-width: 767px) {
+      /* Add styles for smaller screens here */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #111;
+    }
+
+    @keyframes backgroundAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    header {
+      background: linear-gradient(to right, orange, gold);
+      /*background-image: url(beny.jfif);*/
+      background-size: 400% 400%;
+      animation: backgroundAnimation 8s ease-in-out infinite;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin: 0%;
+      height: 75px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    nav li {
+      float: right;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #111;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    h2{
+      color: white;
+    }
+    p{
+      color: white;
+    }
+
+    textarea{
+      background: grey;
+      border-color: black;
+      border-style: solid;
+      border-width: 3px;
+    }
+
+    a:link, a:visited {
+  background-color: #333;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: darkgrey;
+}
+
+iframe{
+  float: right;
+  margin: auto;
+  padding: 170px 200px;
+}
+
+.alma{
+  float: left;
+  margin: auto;
+  text-align: center;
+  padding: 270px 200px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="" style="width: 160px; align-items: center; margin-top: -40px;">
+  </header>
+  <nav>
+    <ul>
+      <!--<li><a href="#about">Rólunk</a></li>-->
+      <li><a href="#join" >Csatlakozás</a></li>
+      <li><a href="#home">Kezdőlap</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="home" >
+      <div class="alma">
+      <h2>Korona RolePlay</h2>
+      <p>Köszöntelek a Korona RP weboldalán!</p>
+    </div>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bm4ZPkMMyd4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="about" style="display:none">
+      <h2>Rólunk</h2>
+      <p>Egy rp szerver vagyunk.</p>
+    </section>
+    <section id="join" style="display:none">
+      <h2>Csatlakozás</h2>
+      <p>A csatlakozáshoz el kell olvasnod a szabályzatot!</p>
+      <a href="szabaly1.html" id="link1" target="_blank">Szerver Szabályzat</a>
+      <br><br>
+      <a href="szabaly3.html" id="link3" target="_blank">Discord Szabályzat</a>
+      <br><br>
+      <a href="https://discord.gg/zAUYFM9E" id="link4">Discord</a>
+      <script>
+        let clicks = 0;
+        document.getElementById("link4").style.pointerEvents = "none";
+        document.getElementById("link1").addEventListener("click", function() {
+          clicks++;
+          checkClicks();
+        });
+        document.getElementById("link3").addEventListener("click", function() {
+          clicks++;
+          checkClicks();
+        });
+        function checkClicks() {
+          if (clicks === 2) {
+            document.getElementById("link4").style.pointerEvents = "auto";
+          }
+        }
+      </script>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright © 2023</p>
+  </footer>
+  <script>
+    // Get all the navigation links
+    const links = document.querySelectorAll('nav a');
+
+    // Add an event listener to each link
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Get the ID of the section to show
+        const sectionId = e.target.href.split('#')[1];
+
+        // Hide all the sections
+        const sections = document.querySelectorAll('main section');
+        sections.forEach(section => {
+          section.style.display = 'none';
+        });
+
+        // Show the selected section
+        const section = document.getElementById(sectionId);
+        section.style.display = 'block';
+  });
+});
+
+
+  </script>
+</body>
+</html>
